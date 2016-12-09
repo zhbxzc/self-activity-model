@@ -9,7 +9,7 @@ public class QueryAddressResult {
 	@ApiModelProperty(value="地址唯一id",notes="地址唯一id")
     private Long id;
 	@ApiModelProperty(value="客户ID",notes="客户id")
-    private Long customerId;
+    private String customerId;
 	@ApiModelProperty(value="地址类型ID",notes="地址类型id")
     private Integer typeId;
 	@ApiModelProperty(value="省ID",notes="省id")
@@ -44,17 +44,18 @@ public class QueryAddressResult {
     private Date lastUpdatedTime;
 
 	@ApiModelProperty(value="删除标志",notes="删除标志",hidden=true)
-    private Boolean deletedFlag;
+    private String deletedFlag;
+	
     public Long getId() {
         return id;
     }
     public void setId(Long id) {
         this.id = id;
     }
-    public Long getCustomerId() {
+    public String getCustomerId() {
         return customerId;
     }
-    public void setCustomerId(Long customerId) {
+    public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
     public Integer getTypeId() {
@@ -154,10 +155,10 @@ public class QueryAddressResult {
     public void setLastUpdatedTime(Date lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
     }
-    public Boolean getDeletedFlag() {
+    public String getDeletedFlag() {
         return deletedFlag;
     }
-    public void setDeletedFlag(Boolean deletedFlag) {
+    public void setDeletedFlag(String deletedFlag) {
         this.deletedFlag = deletedFlag;
     }
 }

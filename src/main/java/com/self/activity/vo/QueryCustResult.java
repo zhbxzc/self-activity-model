@@ -6,87 +6,154 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 
 public class QueryCustResult {
+	
 	@ApiModelProperty(value="客户id",notes="客户id")
     private String id;
+	
 	@ApiModelProperty(value="客户类型",notes="客户类型",hidden=true)
     private Integer typeId;
+	
     @ApiModelProperty(value="编码",notes="客户编码",hidden=true)
     private String code;
+    
     @ApiModelProperty(value="名称",notes="客户名称")
     private String name;
+    
     @ApiModelProperty(value="描述",notes="客户描述",hidden=true)
     private String des;
+    
     @ApiModelProperty(value="性别id",notes="客户性别id")
     private Integer sexId;
+    
     @ApiModelProperty(value="出生日期",notes="客户出生日期",dataType="Date")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date birthday;
+    
     @ApiModelProperty(value="身份证号",notes="客户身份证号")
     private String idCardNo;
+    
     @ApiModelProperty(value="电子邮箱",notes="客户电子邮箱")
     private String email;
+    
     @ApiModelProperty(value="移动电话",notes="客户移动电话")
     private String mobile;
+    
     @ApiModelProperty(value="固定电话",notes="客户固定电话")
     private String tel;
+    
     @ApiModelProperty(value="国籍id",notes="客户国籍id",hidden=true)
     private Integer countryId;
+    
     @ApiModelProperty(value="民族id",notes="客户民族id",hidden=true)
     private Integer nationId;
+    
     @ApiModelProperty(value="语种id",notes="客户语种id",hidden=true)
     private Integer languageId;
+    
     @ApiModelProperty(value="政治面貌id",notes="客户政治面貌id",hidden=true)
     private Integer politicsId;
+    
     @ApiModelProperty(value="教育程度id",notes="客户教育程度id",hidden=true)
     private Integer educationId;
+    
     @ApiModelProperty(value="学位id",notes="客户学位id",hidden=true)
     private Integer degreeId;
+    
     @ApiModelProperty(value="职业id",notes="客户职业id",hidden=true)
     private Integer occupationId;
+    
     @ApiModelProperty(value="单位名称",notes="客户单位名称",hidden=true)
     private String orgName;
+    
     @ApiModelProperty(value="婚姻状态id",notes="客户婚姻状态id")
     private Integer marriedFlag;
+    
     @ApiModelProperty(value="注册机构id",notes="客户注册机构id",hidden=true)
     private Integer registOrgId;
+    
     @ApiModelProperty(value="注册时间",notes="客户注册时间",hidden=true)
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date registTime;
+    
     @ApiModelProperty(value="主索引标记",notes="客户主索引标记",hidden=true)
     private Boolean mainIndexFlag;
+    
     @ApiModelProperty(value="拼音码",notes="客户拼音码",hidden=true)
     private String spellNo;
+    
     @ApiModelProperty(value="五笔码",notes="客户五笔码",hidden=true)
     private String wubiNo;
+    
     @ApiModelProperty(value="版本号",notes="客户版本号",hidden=true)
     private Integer versionNo;
+    
     @ApiModelProperty(value="创建者id",notes="客户创建者id",hidden=true)
     private Long createdById;
+    
     @ApiModelProperty(name="创建时间",notes="创建时间",hidden=true)
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date createdTime;
+    
     @ApiModelProperty(value="最近更新者id",notes="客户最近更新者id",hidden=true)
     private Long lastUpdatedById;
+    
     @ApiModelProperty(name="最近更新时间",notes="最近更新时间",hidden=true)
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date lastUpdatedTime;
+    
     @ApiModelProperty(value="删除标记",notes="客户删除标记",hidden=true)
-    private Boolean deletedFlag;
+    private String deletedFlag;
+    
     @ApiModelProperty(name="昵称",notes="昵称")
     private String nickname;
+    
     @ApiModelProperty(value="居住情况id",notes="客户居住情况id",hidden=true)
     private Integer livestateId;
+    
     @ApiModelProperty(value="养老机构居住状态id",notes="客户养老机构居住状态id",hidden=true)
     private Integer liveorgstateId;
+    
     @ApiModelProperty(value="工作详情",notes="工作详情",hidden=true)
     private String occupationOther;
+    
     @ApiModelProperty(value="宗教信仰id",notes="客户宗教信仰id",hidden=true)
     private Integer religionId;
+    
     @ApiModelProperty(value="兴趣爱好(文化)",notes="兴趣爱好(文化)",hidden=true)
     private String intercultureId;
+    
     @ApiModelProperty(value="兴趣爱好(运动)",notes="兴趣爱好(运动)",hidden=true)
     private String intersportsId;
+    
+    @ApiModelProperty(value="ABO血型",notes="ABO血型")
+    private Integer aboBloodId;
+    @ApiModelProperty(value="RH血型",notes="RH血型")
+    private Integer rhBloodId;
+
+    @ApiModelProperty(value="居民标志",notes="居民标志")
+    private Boolean residentFlag;
+
+    @ApiModelProperty(value="高客标志",notes="高客标志")
+    private Boolean highFlag;
+
+    @ApiModelProperty(value="员工标志",notes="员工标志")
+    private Boolean employeeFlag;
+    
+    @ApiModelProperty(value="地址列表",notes="地址列表")
     private List<QueryAddressResult> addressList;
+    
+    @ApiModelProperty(value="证件列表",notes="证件列表")
+    private List<QueryCetificationResult> certificationList;
+    
+    @ApiModelProperty(value="交叉索引列表",notes="交叉索引列表")
+    private List<?> xindexList;
+    
+    @ApiModelProperty(value="关系人列表",notes="关系人列表")
+    private List<?> relationList;
+    
+    @ApiModelProperty(value="机构列表",notes="机构列表")
+    private List<?> orgList;
+    
     public String getId() {
         return id;
     }
@@ -572,7 +639,7 @@ public class QueryCustResult {
      *
      * @mbggenerated Sat Oct 08 15:20:27 CST 2016
      */
-    public Boolean getDeletedFlag() {
+    public String getDeletedFlag() {
         return deletedFlag;
     }
 
@@ -584,7 +651,7 @@ public class QueryCustResult {
      *
      * @mbggenerated Sat Oct 08 15:20:27 CST 2016
      */
-    public void setDeletedFlag(Boolean deletedFlag) {
+    public void setDeletedFlag(String deletedFlag) {
         this.deletedFlag = deletedFlag;
     }
 
@@ -753,5 +820,59 @@ public class QueryCustResult {
 	}
 	public void setAddressList(List<QueryAddressResult> addressList) {
 		this.addressList = addressList;
+	}
+	public Integer getAboBloodId() {
+		return aboBloodId;
+	}
+	public void setAboBloodId(Integer aboBloodId) {
+		this.aboBloodId = aboBloodId;
+	}
+	public Integer getRhBloodId() {
+		return rhBloodId;
+	}
+	public void setRhBloodId(Integer rhBloodId) {
+		this.rhBloodId = rhBloodId;
+	}
+	public Boolean getResidentFlag() {
+		return residentFlag;
+	}
+	public void setResidentFlag(Boolean residentFlag) {
+		this.residentFlag = residentFlag;
+	}
+	public Boolean getHighFlag() {
+		return highFlag;
+	}
+	public void setHighFlag(Boolean highFlag) {
+		this.highFlag = highFlag;
+	}
+	public Boolean getEmployeeFlag() {
+		return employeeFlag;
+	}
+	public void setEmployeeFlag(Boolean employeeFlag) {
+		this.employeeFlag = employeeFlag;
+	}
+	public List<QueryCetificationResult> getCertificationList() {
+		return certificationList;
+	}
+	public void setCertificationList(List<QueryCetificationResult> certificationList) {
+		this.certificationList = certificationList;
+	}
+	public List<?> getXindexList() {
+		return xindexList;
+	}
+	public void setXindexList(List<?> xindexList) {
+		this.xindexList = xindexList;
+	}
+	public List<?> getRelationList() {
+		return relationList;
+	}
+	public void setRelationList(List<?> relationList) {
+		this.relationList = relationList;
+	}
+	public List<?> getOrgList() {
+		return orgList;
+	}
+	public void setOrgList(List<?> orgList) {
+		this.orgList = orgList;
 	}
 }
