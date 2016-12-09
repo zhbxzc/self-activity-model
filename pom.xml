@@ -15,7 +15,13 @@
 		<groupId>com.self.activity</groupId>
 		<artifactId>self-activity-sdk</artifactId>
 		<version>0.0.1</version>
-	</dependency> 
+	</dependency>
+	<!-- solr插件 -->
+     <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-solr</artifactId>
+			<version>1.4.2.RELEASE</version>
+	</dependency>
   </dependencies>
   <build>  
     <plugins>  
